@@ -49,7 +49,7 @@ to the image:
 
 Distorted                     |  Undistorted
 :----------------------------:|:------------------------------:
-![Distorted](./test_images/test1.jpg)| ![Undistorted](./output_imagestest1_undistort.jpg)
+![Distorted](./test_images/test1.jpg)| ![Undistorted](./output_images/test1_undistort.jpg)
 
 
 
@@ -67,8 +67,6 @@ Source                  |  Binary
 
 
 
-![alt text][image3]
-
 #### 3. Describe how (and identify where in your code) you performed a perspective transform and provide an example of a transformed image.
 
 The code for my perspective transform includes a class called `Perspective` with methods called `warp()` and `unwarp`, which appear in lines 141 through 173 in the file `lanes.py`. 
@@ -83,8 +81,6 @@ This resulted in the following source and destination points:
 | 585, 456      | 303, 0        |
 | 700, 456      | 1011, 0       |
 | 1061, 690     | 1011, 690     |
-
-
 
 
 I verified that my perspective transform was working as expected by drawing the `src` and `dst` points onto a test image and its warped counterpart to verify that the lines appear parallel in the warped image.
@@ -102,11 +98,11 @@ I identifed lane-line pixels using the sliding histogram approach straight from 
  I initially found the
 starting points by plotting pixel densities as a histogram to identify peaks:
 
-![Histogram][./output_images/histogram.png]
+![Histogram](./output_images/histogram.png)
 
 Using a sliding window, I highlighted pixels within the windows as part of the lane. It looks like:
 
-![Sliding][./output_images/sliding.png]
+![Sliding](./output_images/sliding.png)
 
 
 Once I identified the left lane in red and right lane in blue. I used those points 
@@ -126,7 +122,7 @@ I did this in lines 30 through 40 in my code in the `compute_curvature()` functi
 
 I implemented this step in lines 304 through 332 in my code in my `Lines` class in the function `draw()`.  Here is an example of my result on a test image:
 
-![Lane Overlay][./output_images/lane_overlay.png]
+![Lane Overlay](./output_images/lane_overlay.png)
 
 ---
 
